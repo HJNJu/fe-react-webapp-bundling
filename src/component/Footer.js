@@ -7,15 +7,17 @@ const BREAK_POINT_PC = 1200;
 const Wrapper = styled.div`
   width: 100%;
   height: 100px;
-  padding: 8px 28px 0 28px;
-  margin: auto;
-  text-align: center;
+  padding: 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #868e96;
-  .footer_bottom {
-    width: 100%;
-    padding-top: 32px;
-    height: 48px;
+  font-size: 12px;
+
+  .footer-logo {
+    width: 220px;
   }
+
   // 태블릿 : 1200px ~ 768px :: 768px 이상 적용되는 css
   @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
   }
@@ -24,13 +26,26 @@ const Wrapper = styled.div`
   }
 `;
 
+const FooterItems = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  .footer-items {
+    height: 20px;
+    margin: 0 20px;
+  }
+`;
+
 const Footer = () => {
   return (
     <div className="footer">
       <Wrapper>
-        <div className="footer_bottom">
-          <span>© Copyright ⓒ 2022 CodeStates</span>
-        </div>
+        <div className='footer-logo'>POWERED BY WEBFLOW</div>
+          <FooterItems>
+            <div className='footer-items'>FACEBOOK</div>
+            <div className='footer-items'>TWITTER</div>
+            <div className='footer-items'>INSTAGRAM</div>
+          </FooterItems>
       </Wrapper>
     </div>
   );
