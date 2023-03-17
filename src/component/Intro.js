@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 import '../App.css';
 
-const MainArea = styled.div`
-
-  max-height: 864px;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  padding: 128px 0px 0 0px;
-
+const IntroArea = styled.div`
+  max-width: 100%;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const IntroWrap = styled.div`
-  margin: 0 50px;
-
+  width: 1140px;
+  margin: 100px 0 140px;
   .name-text {
     font-size: 20px;
+    height: 34px;
   }
 
   .paragraph-light {
     font-size: 16px;
+    height: 24px;
   }
 
   .heading-jumbo {
@@ -27,13 +27,17 @@ const IntroWrap = styled.div`
     font-size: 64px;
     font-weight: 400;
   }
+
+  @media only screen and (max-width: 767px) {
+    text-align: center;
+  }
 `;
 
 
-const Render = () => {
+const Intro = () => {
   return (
     <>
-      <MainArea>
+      <IntroArea>
         <IntroWrap>
           <div className='name-text'>Hyojin Ju</div>
           <div className='paragraph-light'>Frontend Engineer</div>
@@ -41,9 +45,9 @@ const Render = () => {
             Hey there! I am a creative frontend engineer based in sunny San Francisco, CA.
           </h1>
         </IntroWrap>
-      </MainArea>
+      </IntroArea>
     </>
   );
 };
 
-export default Render;
+export default Intro;

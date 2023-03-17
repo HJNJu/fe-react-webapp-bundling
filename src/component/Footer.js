@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import '../App.css';
 
-const BREAK_POINT_TABLET = 768;
-const BREAK_POINT_PC = 1200;
-
 const Wrapper = styled.div`
   width: 100%;
-  height: 100px;
   padding: 40px 50px;
   display: flex;
   align-items: center;
@@ -14,16 +10,19 @@ const Wrapper = styled.div`
   color: #868e96;
   font-size: 12px;
 
-  .footer-logo {
+  .footer-name {
     width: 220px;
   }
 
-  // 태블릿 : 1200px ~ 768px :: 768px 이상 적용되는 css
-  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+
+    .footer-name {
+      height: 35px;
+      text-align: center;
+    }
   }
-  // PC : 1200px 이상 :: 1200px 이상 적용되는 css
-  @media only screen and (min-width: ${BREAK_POINT_PC}px) {
-  }
+
 `;
 
 const FooterItems = styled.div`
@@ -33,6 +32,20 @@ const FooterItems = styled.div`
   .footer-items {
     height: 20px;
     margin: 0 20px;
+    transition: 0.3s;
+  }
+  .footer-items:hover {
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+  }
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .footer-items {
+    height: 40px;
+  }
   }
 `;
 
@@ -40,7 +53,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <Wrapper>
-        <div className='footer-logo'>POWERED BY WEBFLOW</div>
+        <div className='footer-name'>POWERED BY WEBFLOW</div>
           <FooterItems>
             <div className='footer-items'>FACEBOOK</div>
             <div className='footer-items'>TWITTER</div>
